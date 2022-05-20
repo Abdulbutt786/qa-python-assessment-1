@@ -35,15 +35,13 @@
 
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
-def one (input1, input2):
-	a = len(input1)
-	b = len(input2)
-	if a>b:
-		return a
-	elif (b>a):
-		return b
-	else:
-		return a+" "+b
+def one(input1, input2):
+	if str(len(input1)) < str(len(input2)):
+		return input2
+	elif str(len(input1)) > str(len(input2)):
+		return input1
+	elif str(len(input1)) == str(len(input2)):
+		return f"{input1} {input2}"
 
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
@@ -94,7 +92,12 @@ def two(arg1):
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def three(input):
-    return 0
+
+	vowels = 'aeiou'
+
+	count = len([i for i in input.lower() if i in vowels])
+
+	return count
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -117,7 +120,12 @@ def three(input):
 
 
 def four(input):
-    return False
+	if "cei" in input or "ie" in input:
+		return True
+	elif "ie" in input and "c" in input:
+		return False
+	else:
+          return False
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
